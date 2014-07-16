@@ -1,0 +1,33 @@
+{
+    "name": "vanilla/garden-html",
+    "description": "A php port of the ruby html pipeline.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Todd Burry",
+            "email": "todd@vanillaforums.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "tburry/pquery": "~1.0.1"
+    },
+	"require-dev": {
+		"erusev/parsedown": "~1.0.1",
+		"vanilla/htmlawed": "~1.0.1"
+	},
+	"recommend": {
+		"vanilla/htmlawed": "Allows you to use the HtmlawedFilter.",
+		"erusev/parsedown": "Allows you to use the ParsedownFilter."
+	},
+    "autoload": {
+        "psr-4": {
+            "Garden\\Html\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Garden\\Html\\Test\\": "tests"
+        }
+    }
+}
