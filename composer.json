@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "tburry/pquery": "~1.0.1"
+        "tburry/pquery": "~1.1"
     },
 	"require-dev": {
 		"erusev/parsedown": "~1.0.1",
