@@ -10,6 +10,9 @@ namespace Garden\Html;
 use pQuery;
 use pQuery\DomNode;
 
+/**
+ * A class to store result content from html filters.
+ */
 class Content {
     /// Properties ///
 
@@ -19,7 +22,7 @@ class Content {
     protected $data;
 
     /**
-     * @var IQuery The document fragment to be manipulated.
+     * @var DomNode The document fragment to be manipulated.
      */
     protected $doc;
 
@@ -30,7 +33,13 @@ class Content {
 
     /// Methods ///
 
-    public function __construct($doc, $result = []) {
+    /**
+     * Initialize a {@link Content} object.
+     *
+     * @param string|DomNode $doc The html or document.
+     * @param array $data The result data of the content.
+     */
+    public function __construct($doc, $data = []) {
         if (is_string($doc)) {
             $this->html = $doc;
             $this->doc = null;
@@ -38,9 +47,14 @@ class Content {
             $this->doc = $doc;
             $this->html = null;
         }
-        $this->data = $result;
+        $this->data = $data;
     }
 
+    /**
+     * Get the string representation of the object.
+     *
+     * @return string Returns the content html.
+     */
     public function __toString() {
         return $this->getHtml();
     }
@@ -60,7 +74,7 @@ class Content {
     }
 
     /**
-     * Gets the {@link IQuery} to be manipulated.
+     * Gets the {@link DomNode} to be manipulated.
      *
      * If the filter was provided a string, parse into an {@link IQuery} the first time this method is called.
      *

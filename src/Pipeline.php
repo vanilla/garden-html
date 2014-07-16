@@ -39,7 +39,7 @@ class Pipeline extends Filter {
     public function call($content) {
         /* @var Filter $content */
         foreach ($this->filters as $filter) {
-            $content = $html = $filter->call($content);
+            $content = $filter->call($content);
         }
 
         return $content;

@@ -47,9 +47,9 @@ PATTERN;
      * {@inheritdoc}
      */
     public function call($content) {
-        $this->content = Content::box($content);
+        $content = Content::box($content);
         $this->mentionedUsernames = [];
-        $doc = $this->content->getDoc();
+        $doc = $content->getDoc();
 
         /* @var TextNode $node */
         foreach ($doc->query('text()') as $node) {
@@ -66,8 +66,8 @@ PATTERN;
             $text = $this->replaceMentions($text, $node);
             $node->text($text);
         }
-        $this->content->setData('mentions', array_reverse(array_keys($this->mentionedUsernames)));
-        return $this->content;
+        $content->setData('mentions', array_reverse(array_keys($this->mentionedUsernames)));
+        return $content;
     }
 
     /**

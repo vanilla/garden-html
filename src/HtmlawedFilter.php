@@ -31,6 +31,7 @@ class HtmlawedFilter extends Filter {
     public function call($content) {
         if (is_string($content)) {
             $result = Htmlawed::filter($content);
+            return $result;
         } else {
             $content = Content::box($content);
             $html = Htmlawed::filter($content->getHtml());

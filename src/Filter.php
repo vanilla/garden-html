@@ -18,7 +18,7 @@ abstract class Filter {
     /**
      * Call the filter on the given content.
      *
-     * @param Content|string|DomNode $content The content to filter.
+     * @param Content|string $content The content to filter.
      * @return Content|string Returns either a {@link Content} object or a string representing the filtered content.
      */
     abstract public function call($content);
